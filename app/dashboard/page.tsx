@@ -1,4 +1,5 @@
 import { getCurrentUser } from "@/lib/supabase/getUser"
+import ScoreSummaryWidget from "@/components/ScoreSummaryWidget"
 
 export default async function DashboardPage() {
   const { profile, user } = await getCurrentUser()
@@ -52,6 +53,9 @@ export default async function DashboardPage() {
           </div>
         </div>
       </div>
+
+      {/* Score summary widget */}
+      <ScoreSummaryWidget />
     </div>
   )
 }

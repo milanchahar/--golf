@@ -24,6 +24,20 @@ export type Json =
   | { [key: string]: Json | undefined }
   | Json[]
 
+export interface GolfScore {
+  id: string;
+  user_id: string;
+  score: number;
+  score_date: string; // ISO date string "YYYY-MM-DD"
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ScoreFormData {
+  score: number;
+  score_date: string;
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -31,6 +45,12 @@ export interface Database {
         Row: Profile;
         Insert: Partial<Omit<Profile, 'id' | 'created_at'>> & { id: string };
         Update: Partial<Omit<Profile, 'id' | 'created_at'>>;
+        Relationships: [];
+      };
+      golf_scores: {
+        Row: GolfScore;
+        Insert: Omit<GolfScore, 'id' | 'created_at' | 'updated_at'>;
+        Update: Partial<Pick<GolfScore, 'score' | 'updated_at'>>;
         Relationships: [];
       };
     };
