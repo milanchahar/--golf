@@ -26,6 +26,9 @@ export default async function DashboardLayout({
           <Link href="/dashboard/scores" className="flex items-center px-3 py-2 text-sm font-medium rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
             Scores
           </Link>
+          <Link href="/dashboard/draws" className="flex items-center px-3 py-2 text-sm font-medium rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+            Draws
+          </Link>
           <Link href="/dashboard/charity" className="flex items-center px-3 py-2 text-sm font-medium rounded-md text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
             Charity
           </Link>
