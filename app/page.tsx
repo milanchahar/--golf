@@ -2,7 +2,7 @@
 import { useRef, useState } from 'react';
 import PublicNavbar from '@/components/public/Navbar';
 import Link from 'next/link';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { PenSquare, Target, Heart, ChevronDown, ChevronUp } from 'lucide-react';
 import JackpotCounter from '@/components/JackpotCounter';
 
