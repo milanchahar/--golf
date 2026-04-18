@@ -79,10 +79,10 @@ export default async function DashboardWinningsPage() {
                return (
                  <WinnerStatusCard 
                    key={entry.id}
-                   userId={user.id}
+                   userId={user.id || ''}
                    prediction={{
                      id: entry.id,
-                     draw_month: entry.draws?.draw_month || 'Unknown',
+                     draw_month: (Array.isArray(entry.draws) ? entry.draws[0]?.draw_month : (entry.draws as any)?.draw_month) || 'Unknown',
                      prize_tier: entry.prize_tier as any,
                      prize_amount: entry.prize_amount || 0,
                      is_winner: entry.is_winner

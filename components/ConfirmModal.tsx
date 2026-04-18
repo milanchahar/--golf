@@ -1,6 +1,6 @@
 'use client';
 import { ReactNode } from 'react';
-import Button from './ui/Button';
+import { Button } from './ui/Button';
 
 interface ConfirmModalProps {
   isOpen: boolean;
@@ -38,7 +38,7 @@ export default function ConfirmModal({
             {cancelLabel}
           </Button>
           <Button 
-            variant="solid" 
+            variant="default" 
             className={isDangerous ? 'bg-red-500 hover:bg-red-600 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}
             onClick={() => {
               onConfirm();

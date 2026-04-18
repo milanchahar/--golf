@@ -24,4 +24,11 @@ export async function getCurrentUser(): Promise<{ user: User | null, profile: Pr
   return { user, profile }
 }
 
-export const getUser = getCurrentUser;
+export const getUser = async (client?: any) => {
+  const res = await getCurrentUser();
+  return {
+    ...res,
+    id: res.user?.id,
+    role: res.profile?.role
+  };
+};

@@ -175,6 +175,48 @@ export interface Database {
         Update: Partial<Pick<GolfScore, 'score' | 'updated_at'>>;
         Relationships: [];
       };
+      charities: {
+        Row: Charity;
+        Insert: any;
+        Update: any;
+        Relationships: [];
+      };
+      charity_events: {
+        Row: CharityEvent;
+        Insert: any;
+        Update: any;
+        Relationships: [];
+      };
+      charity_contributions: {
+        Row: CharityContribution;
+        Insert: any;
+        Update: any;
+        Relationships: [];
+      };
+      draws: {
+        Row: Draw;
+        Insert: any;
+        Update: any;
+        Relationships: [];
+      };
+      draw_entries: {
+        Row: DrawEntry;
+        Insert: any;
+        Update: any;
+        Relationships: [];
+      };
+      prize_pools: {
+        Row: PrizePool;
+        Insert: any;
+        Update: any;
+        Relationships: [];
+      };
+      winner_verifications: {
+        Row: WinnerVerification;
+        Insert: any;
+        Update: any;
+        Relationships: [];
+      };
     };
     Views: {
       [_ in never]: never

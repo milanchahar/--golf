@@ -52,7 +52,7 @@ export default function Home() {
              </motion.div>
 
              <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.8, duration: 0.8 }} className="mt-16 mx-auto max-w-md">
-                <JackpotCounter amount={450.00} />
+                <JackpotCounter />
              </motion.div>
           </div>
        </header>
