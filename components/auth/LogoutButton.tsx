@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Button, ButtonProps } from '@/components/ui/Button'
 import { LogOut } from 'lucide-react'
 
-export function LogoutButton({ className, variant = 'ghost', ...props }: ButtonProps) {
+export default function LogoutButton({ className, variant = 'ghost', ...props }: ButtonProps) {
   const router = useRouter()
   const supabase = createClient()
 
