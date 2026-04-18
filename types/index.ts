@@ -12,6 +12,7 @@ export interface Profile {
   subscription_renewal_date: string | null; // ISO 8601 string
   selected_charity_id: string | null; // uuid
   charity_contribution_percent: number;
+  notification_preferences: any | null; // store as json
   created_at: string; // ISO 8601 string
 }
 
@@ -76,6 +77,87 @@ export interface SimulationPreview {
   three_match_winners: string[];
   prize_breakdown: { fiveMatch: number; fourMatch: number; threeMatch: number };
   total_eligible_users: number;
+}
+
+export interface PrizePool {
+  id: string;
+  draw_id: string;
+  draw_month: string;
+  total_active_subscribers: number;
+  subscription_revenue: number;
+  prize_pool_total: number;
+  five_match_pool: number;
+  four_match_pool: number;
+  three_match_pool: number;
+  jackpot_carry_in: number;
+  jackpot_carry_out: number;
+  five_match_winners: number;
+  four_match_winners: number;
+  three_match_winners: number;
+  five_match_payout: number;
+  four_match_payout: number;
+  three_match_payout: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface BuildPrizePoolParams {
+  draw_id: string;
+  draw_month: string;
+  monthly_subscribers: number;
+  yearly_subscribers: number;
+  jackpot_carry_in: number;
+  five_match_winners: number;
+  four_match_winners: number;
+  three_match_winners: number;
+}
+
+export interface Charity {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  logo_url: string;
+  banner_image_url: string;
+  website_url: string;
+  is_featured: boolean;
+  is_active: boolean;
+  total_raised: number;
+}
+
+export interface CharityEvent {
+  id: string;
+  charity_id: string;
+  title: string;
+  description: string;
+  event_date: string;
+  location: string;
+  image_url: string;
+}
+
+export interface CharityContribution {
+  id: string;
+  user_id: string;
+  charity_id: string;
+  amount: number;
+  contribution_month: string;
+  contribution_type: 'subscription' | 'independent';
+}
+
+export interface WinnerVerification {
+  id: string;
+  draw_entry_id: string;
+  user_id: string;
+  draw_id: string;
+  proof_image_url: string;
+  proof_uploaded_at: string;
+  status: 'pending' | 'approved' | 'rejected';
+  admin_notes: string | null;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  payment_status: 'unpaid' | 'pending' | 'paid';
+  payment_reference: string | null;
+  payment_completed_at: string | null;
 }
 
 export interface Database {
