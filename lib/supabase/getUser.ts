@@ -23,3 +23,5 @@ export async function getCurrentUser(): Promise<{ user: User | null, profile: Pr
 
   return { user, profile }
 }
+
+export const getUser = getCurrentUser;
