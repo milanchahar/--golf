@@ -16,7 +16,7 @@ export async function uploadProofImage(userId: string, file: File): Promise<stri
   const timestamp = Date.now();
   const filePath = `${userId}/${timestamp}-proof.${fileExtension}`;
 
-  const { data, error } = await supabase.storage
+  const { error } = await supabase.storage
     .from('winner-proofs')
     .upload(filePath, file, {
       cacheControl: '3600',

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { CheckCircle, XCircle } from 'lucide-react';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function WinnerReviewPanel({ userDetails, verification, drawDetails, onStatusUpdate }: any) {
   const [adminNotes, setAdminNotes] = useState('');
   const [refKey, setRefKey] = useState('');
@@ -81,6 +82,7 @@ export default function WinnerReviewPanel({ userDetails, verification, drawDetai
         {/* Right Col */}
         <div className="w-full lg:w-2/3 bg-slate-900 flex items-center justify-center p-8 relative min-h-[400px]">
            {verification?.proof_image_url ? (
+             /* eslint-disable-next-line @next/next/no-img-element */
              <img src={verification.proof_image_url} alt="Proof" className="max-w-full max-h-full object-contain rounded-lg border border-slate-700 shadow-2xl relative z-10" />
            ) : (
              <span className="text-slate-600 font-mono">EVIDENCE_ASSET_MISSING</span>

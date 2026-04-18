@@ -67,8 +67,8 @@ export default function ProofUpload({ drawEntryId, userId, onSuccess }: ProofUpl
       }
       
       onSuccess();
-    } catch (err: any) {
-      setError(err.message || 'An unexpected error occurred during upload.');
+    } catch (err: unknown) {
+      setError((err as Error).message || 'An unexpected error occurred during upload.');
     } finally {
       setIsUploading(false);
     }
@@ -103,6 +103,7 @@ export default function ProofUpload({ drawEntryId, userId, onSuccess }: ProofUpl
       ) : (
         <div className="space-y-4">
           <div className="relative rounded-lg overflow-hidden border border-slate-700 bg-black/50 aspect-video flex items-center justify-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={previewUrl} alt="Preview" className="object-contain max-h-48" />
           </div>
           

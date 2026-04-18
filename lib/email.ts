@@ -5,6 +5,7 @@ const resendApiKey = process.env.RESEND_API_KEY;
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'noreply@golfheroes.com';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const safeSend = async (params: any) => {
   if (!resend) {
     console.warn("RESEND_API_KEY NOT CONFIGURED. MOCKING EMAIL SEND.", params.subject, params.to);

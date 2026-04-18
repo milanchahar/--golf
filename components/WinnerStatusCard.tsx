@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { CheckCircle2, Clock, XCircle, AlertTriangle, AlertCircle, FileImage } from 'lucide-react';
+import { CheckCircle2, Clock, XCircle, AlertCircle, FileImage } from 'lucide-react';
 import ProofUpload from './ProofUpload';
 
 interface WinnerStatusCardProps {
